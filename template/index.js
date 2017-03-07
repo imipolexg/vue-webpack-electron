@@ -7,6 +7,8 @@ const path = require('path')
 let mainWindow
 
 app.on('ready', () => {
+  BrowserWindow.addDevToolsExtension(path.join(__dirname, 'node_modules/vue-devtools/'))
+
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,

@@ -22,6 +22,7 @@
     "electron-packager": "^8.5.2",
     "file-loader": "^0.10.1",
     "url-loader": "^0.5.8",
+    "vue-devtools": "^3.0.8",
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.1"
