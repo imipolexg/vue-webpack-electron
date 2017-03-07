@@ -1,14 +1,14 @@
 <template>
   <div class="hello">
     <h1>\{{ msg }}</h1>
+    <p>It's named "\{{ appName }}" and it's running on \{{ arch }}</p>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
       <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
+      <li><a href="https://electron.atom.io/" target="_blank">Electron</a></li>
     </ul>
     <h2>Ecosystem</h2>
     <ul>
@@ -21,14 +21,19 @@
 </template>
 
 <script>
+import { remote } from 'electron'
+import os from 'os'
+
 export default {
   name: 'hello',
-  data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+      msg: 'Welcome to Your Vue.js + Electron App',
+      appName: remote.app.getName(),
+      arch: os.platform() + '-' + os.arch()
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

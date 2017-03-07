@@ -1,56 +1,30 @@
-# vue-webpack-boilerplate
+# vue-webpack-electron
 
-> A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
+> A dead-simple setup for building Electron apps with Vue.js
 
-> This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack#1.0 my-project`
-
-## Documentation
-
-- [For this template](http://vuejs-templates.github.io/webpack): common questions specific to this template are answered and each part is described in greater detail
-- [For Vue 2.0](http://vuejs.org/guide/): general information about how to work with Vue, not specific to this template
+> This template is only Vue 2.0 compatible.
 
 ## Usage
 
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It is recommended to use npm 3+ for a more efficient dependency tree.**
 
+It was forked from [vuejs-templates/webpack](https://github.com/vuejs-templates/webpack) and the directory layout is pretty much the same as with that template.
+
 ``` bash
 $ npm install -g vue-cli
-$ vue init webpack my-project
+$ vue init imipolexg/vue-webpack-electron my-project
 $ cd my-project
 $ npm install
-$ npm run dev
+$ npm run build && npm run electron
 ```
 
-If port 8080 is already in use on your machine you must change the port number in `/config/index.js`. Otherwise `npm run dev` will fail.
+## What's in the Box?
 
-## What's Included
+This is a pretty bare bones starter kit. The other vue + electron templates out there had more bells and whistles (like live reload), but as a consequence they lost support for important electron features, like "cross-origin" HTTP requests and filesystem access. Here you can do `import os from 'os'` or `import fs from 'fs'` and work with electron the way it should be, as a desktop app, not a webapp.
 
-- `npm run dev`: first-in-class development experience.
-  - Webpack + `vue-loader` for single file Vue components.
-  - State preserving hot-reload
-  - State preserving compilation error overlay
-  - Lint-on-save with ESLint
-  - Source maps
+I plan on devising a hot-reload system in the future, but it's not there right now. If anyone knows of an existing package that will accomplish this, feel free to submit a pull request.
 
-- `npm run build`: Production ready build.
-  - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
-  - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
-  - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
-  - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
-  - Use `npm run build --report`to build with bundle size analytics.
-
-- `npm run unit`: Unit tests run in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html) + [Mocha](http://mochajs.org/) + [karma-webpack](https://github.com/webpack/karma-webpack).
-  - Supports ES2015+ in test files.
-  - Supports all webpack loaders.
-  - Easy mock injection.
-
-- `npm run e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
-  - Run tests in multiple browsers in parallel.
-  - Works with one command out of the box:
-    - Selenium and chromedriver dependencies automatically handled.
-    - Automatically spawns the Selenium server.
-
-### Fork It And Make Your Own
+### Fork it!
 
 You can fork this repo to create your own boilerplate, and use it with `vue-cli`:
 
